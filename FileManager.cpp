@@ -35,9 +35,6 @@ void FileManager::FolderPathGuide()
 
 }
 
-//create a file specify path with its name or just name if saving in same directory
-//you should specify path like defined below
-// C:\\exampleDirectory\\me.txt
 bool FileManager::createFile(const std::string& filename)
 {
 	if (!std::regex_match(filename, full_path_with_file))
@@ -52,9 +49,6 @@ bool FileManager::createFile(const std::string& filename)
 	return false;
 }
 
-//delete a file provide its complete path or just name if in the same directory
-//you should specify path like defined below
-// C:\\exampleDirectory\\me.txt
 bool FileManager::deleteFile(const std::string& filename)
 {
 	if (!std::regex_match(filename, full_path_with_file))
@@ -67,9 +61,6 @@ bool FileManager::deleteFile(const std::string& filename)
 	return false;
 }
 
-//check whether a file exists on a specific location or not
-//you should specify path like defined below
-// C:\\exampleDirectory\\me.txt
 bool FileManager::fileExists(const std::string& filename)
 {
 	if (!std::regex_match(filename, full_path_with_file))
@@ -84,10 +75,6 @@ bool FileManager::fileExists(const std::string& filename)
 	return false;
 }
 
-//read contents of the file as string
-//will return a vector<string> variable
-//you should specify path like defined below
-// C:\\exampleDirectory\\me.txt
 std::vector<std::string> FileManager::readLines(const std::string& filename)
 {
 	if (!std::regex_match(filename, full_path_with_file))
@@ -106,9 +93,6 @@ std::vector<std::string> FileManager::readLines(const std::string& filename)
 	return lines;
 }
 
-//write content to a file provide as vector<string>
-//you should specify path like defined below
-// C:\\exampleDirectory\\me.txt
 bool FileManager::writeLines(const std::string& filename, const std::vector<std::string>& lines)
 {
 	if (!std::regex_match(filename, full_path_with_file))
@@ -126,9 +110,6 @@ bool FileManager::writeLines(const std::string& filename, const std::vector<std:
 	return false;
 }
 
-//to copy a file to specific destination
-//you should specify path like defined below
-// C:\\exampleDirectory\\me.txt
 bool FileManager::copyFile(const std::string& filename, const std::string& directorypath)
 {
 	if (std::regex_match(filename, full_path_with_file) == false)
@@ -163,10 +144,6 @@ std::string FileManager::getLastDirectory(const std::string& path)
 	// Return the last directory name in the path
 	return directories.back();
 }
-
-//copy a directory to a directory
-//you should specify path like defined below
-// C:\\exampleDirectory\\    ...
 bool FileManager::copyDirectory(const std::string& source_directory_path, const std::string& destination_directory_path)
 {
 	if (!std::regex_match(source_directory_path, only_directory_path_regex) && !std::regex_match(destination_directory_path, only_directory_path_regex))
@@ -193,9 +170,6 @@ bool FileManager::copyDirectory(const std::string& source_directory_path, const 
 	return false;
 }
 
-//create a directory
-//you should specify path like defined below
-// C:\\exampleDirectory\\    ...
 bool FileManager::createDirectory(const std::string& directorypath)
 {
 	std::cout << directorypath << std::endl;
@@ -211,10 +185,6 @@ bool FileManager::createDirectory(const std::string& directorypath)
 	}
 	return false;
 }
-
-//create a directory with all of its content
-//you should specify path like defined below
-// C:\\exampleDirectory\\     ...
 bool FileManager::deleteDirectory(const std::string& directorypath)
 {
 	std::cout << directorypath << std::endl;
