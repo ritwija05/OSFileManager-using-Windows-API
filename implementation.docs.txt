@@ -1,0 +1,65 @@
+﻿Implementation Docs 
+
+
+In this you just have to call the built-in static functions of the API to do the file handling.
+
+
+File Handling
+Creating A File:
+     std::string filename = "D:\example.txt\\";
+                   if ( FileManager::createFile(filename) ) 
+                   {
+                           std::cout << "Created file: " << filename << std::endl;
+                   }
+Writing To A File:
+      std::string filename = "D:\example.txt\\";
+                        if (FileManager::fileExists(filename)) 
+                        {
+                                std::cout << "Writing Into the File: \t" <<filename<< std::endl;
+                                std::vector<std::string> newLines ;
+                                newLines.push_back("Hello");
+                                newLines.push_back("world!");
+                                if (FileManager::writeLines(filename, newLines)) {
+                                        std::cout << "Wrote new lines to file: " << filename << std::endl;
+                                }
+                        }
+Reading From A File:
+      std::string filename = "D:\example.txt\\";
+                        if (FileManager::fileExists(filename)) 
+                        {
+                                std::cout << "Reading the File: \t" <<filename<< std::endl;
+                                std::vector<std::string> lines = FileManager::readLines(filename);
+                                for (const auto& line : lines) {
+                                        std::cout << line << std::endl;
+                                }
+                        }
+Copying A File:
+      std::string filename = "D:\example.txt\\";
+                        if (FileManager::fileExists(filename)) 
+                        {
+                                std::cout << "Copying the File: \t" <<filename<< std::endl;
+                                if (FileManager::copyFile(filename, "D:\\np\\")) 
+                                {
+                                std::cout << "File Copied: " << filename << std::endl;
+                                }
+                        }
+Folder Handling
+Creating A Folder:
+      std::string dir = "D:\\meetha\\";
+                        if (FileManager::createDirectory(dir))
+                        {
+                                std::cout << "Directory Created : "<<dir << std::endl;
+                        }
+Copying A Folder:
+                  std::string dir = "D:\\makechange\\";
+                        std::string source = "D:\\np\\";
+                        if( FileManager::copyDirectory(source,dir))
+                        {
+                                std::cout << "Directory D:\\np\\ Copied to: "<<dir << std::endl;
+                        }
+Deleting A Folder:
+                std::string dir = "D:\\makechange\\";
+                if (FileManager::deleteDirectory(dir))
+                {
+                        std::cout << "Directory Deleted : "<<dir << std::endl;
+                }
