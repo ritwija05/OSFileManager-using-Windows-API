@@ -32,3 +32,5 @@ git clone https://github.com/ritwija05/OSFileManager-using-Windows-API.git
 6.Creating new files and directories.
 
 7.Refreshing the current view.
+
+The implementation doc has also been attached for the same.
