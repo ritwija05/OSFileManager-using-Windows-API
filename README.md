@@ -20,9 +20,15 @@ git clone https://github.com/ritwija05/OSFileManager-using-Windows-API.git
 # Features 
 
 1.Navigation through directories using a tree view and list view.
+
 2.Display of file properties such as size, type, and creation/modification date.
+
 3.Opening of files in the default associated program.
+
 4.Copying, moving, and deleting files and directories.
+
 5.Renaming files and directories.
+
 6.Creating new files and directories.
+
 7.Refreshing the current view.
